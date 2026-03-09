@@ -293,7 +293,7 @@ def create_export_section(validation_results: dict):
         csv_data = ReportGenerator.generate_csv_report(validation_results)
         
         st.download_button(
-            label="📊 CSV Report",
+            label="CSV Report",
             data=csv_data,
             file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
             mime="text/csv",
@@ -305,7 +305,7 @@ def create_export_section(validation_results: dict):
         excel_data = ReportGenerator.generate_excel_report(validation_results)
         if excel_data:
             st.download_button(
-                label="📈 Excel Report",
+                label="Excel Report",
                 data=excel_data,
                 file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -313,7 +313,7 @@ def create_export_section(validation_results: dict):
             )
         else:
             st.download_button(
-                label="📈 Excel Report (Unavailable)",
+                label="Excel Report (Unavailable)",
                 data="",
                 file_name="excel_unavailable.txt",
                 mime="text/plain",
@@ -327,7 +327,7 @@ def create_export_section(validation_results: dict):
             pdf_data = ReportGenerator.generate_pdf_report(validation_results)
             if pdf_data:
                 st.download_button(
-                    label="📄 PDF Report",
+                    label="PDF Report",
                     data=pdf_data,
                     file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf",
                     mime="application/pdf",
@@ -335,7 +335,7 @@ def create_export_section(validation_results: dict):
                 )
             else:
                 st.download_button(
-                    label="📄 PDF Report (Error)",
+                    label="PDF Report (Error)",
                     data="",
                     file_name="pdf_error.txt",
                     mime="text/plain",
@@ -344,7 +344,7 @@ def create_export_section(validation_results: dict):
                 )
         else:
             st.download_button(
-                label="📄 PDF Report (Unavailable)",
+                label="PDF Report (Unavailable)",
                 data="",
                 file_name="pdf_unavailable.txt",
                 mime="text/plain",
@@ -356,7 +356,7 @@ def create_export_section(validation_results: dict):
         # JSON Export
         json_data = ReportGenerator.generate_json_report(validation_results)
         st.download_button(
-            label="📋 JSON Report",
+            label="JSON Report",
             data=json_data,
             file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
             mime="application/json",
@@ -371,7 +371,7 @@ def create_export_section(validation_results: dict):
     
     with col1:
         # Print-friendly version
-        if st.button("🖨️ Generate Print-Friendly Version"):
+        if st.button("Generate Print-Friendly Version"):
             st.markdown("#### SAP Validation Report")
             st.markdown(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
             
@@ -387,7 +387,7 @@ def create_export_section(validation_results: dict):
     
     with col2:
         # Email report (copy to clipboard)
-        if st.button("📧 Copy Report Summary"):
+        if st.button("Copy Report Summary"):
             summary_text = ReportGenerator.generate_email_summary(validation_results)
             st.code(summary_text)
             st.success("Summary copied to clipboard! Paste into email or document.")
