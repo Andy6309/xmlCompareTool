@@ -1,30 +1,19 @@
+"""
+SAP Confirmation Validator - Streamlit Web Application
+Main application entry point with proper Streamlit structure
+"""
+
 import streamlit as st
-import pandas as pd
-import xml.etree.ElementTree as ET
-from pathlib import Path
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import base64
-import io
-from typing import Dict, List, Tuple
-import os
 from datetime import datetime
-import json
+import io
+import os
 
-# PDF generation imports
-try:
-    from reportlab.lib.pagesizes import letter, A4
-    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
-    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-    from reportlab.lib.units import inch
-    from reportlab.lib import colors
-    from reportlab.lib.enums import TA_CENTER, TA_LEFT
-    PDF_AVAILABLE = True
-except ImportError:
-    PDF_AVAILABLE = False
+# Import core functionality
+from utils.sap_validator import SAPConfirmationValidator, ReportGenerator, PDF_AVAILABLE
 
-# Set page configuration
+# Configure page
 st.set_page_config(
     page_title="SAP Confirmation Validator",
     page_icon="",
@@ -106,178 +95,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-class SAPConfirmationValidator:
-    def __init__(self):
-        self.eao_data = {}
-        self.xml_data = {}
-    
-    def parse_eao_file(self, file_content: str) -> Dict[str, Dict[str, str]]:
-        """Parse EAO file and extract additional properties grouped by part name"""
-        data = {}
-        
-        try:
-            root = ET.fromstring(file_content)
-            
-            # Find all ErpOrderItem elements at any level
-            for item in root.findall('.//ErpOrderItem'):
-                name = item.find('Name')
-                workstep = item.find('Workstep')
-                
-                if name is not None:
-                    part_name = name.text  # Use just the part name as the key
-                    if part_name not in data:
-                        data[part_name] = {}
-                    
-                    # Get AdditionalProperties from this workstep
-                    add_props = item.find('AdditionalProperties')
-                    if add_props is not None:
-                        for prop in add_props.findall('AdditionalProperty'):
-                            prop_id = prop.get('id')
-                            prop_value = prop.text
-                            if prop_id and prop_value:
-                                # Store with workstep prefix to avoid conflicts
-                                workstep_prefix = f"{workstep.text}_" if workstep else ""
-                                data[part_name][f"{workstep_prefix}{prop_id}"] = prop_value.strip()
-                    
-        except Exception as e:
-            st.error(f"Error parsing EAO file: {str(e)}")
-            return {}
-        
-        return data
-    
-    def parse_xml_report(self, file_content: str) -> Dict[str, Dict[str, str]]:
-        """Parse XML report file and extract additional properties grouped by part name"""
-        data = {}
-        
-        try:
-            root = ET.fromstring(file_content)
-            
-            # Find all Part elements
-            for part in root.findall('.//Part'):
-                name = part.find('Name')
-                
-                if name is not None:
-                    part_name = name.text  # Use just the part name as the key
-                    if part_name not in data:
-                        data[part_name] = {}
-                    
-                    # Get AdditionalProperties
-                    add_props = part.find('AdditionalProperties')
-                    if add_props is not None:
-                        for prop in add_props.findall('AdditionalProperty'):
-                            prop_id = prop.get('id')
-                            prop_value = prop.text
-                            if prop_id and prop_value:
-                                data[part_name][prop_id] = prop_value.strip()
-                    
-        except Exception as e:
-            st.error(f"Error parsing XML report: {str(e)}")
-            return {}
-        
-        return data
-    
-    def validate_properties(self, eao_data: Dict, xml_data: Dict) -> Dict:
-        """Validate SAP properties between EAO order and XML report"""
-        validation_results = {
-            'total_parts': len(eao_data),
-            'valid_parts': 0,
-            'missing_properties_count': 0,
-            'validation_rate': 0.0,
-            'issues': [],
-            'detailed_results': []
-        }
-        
-        # Get all unique part names
-        all_parts = set(eao_data.keys()) | set(xml_data.keys())
-        
-        # Count missing SAP properties and validate each part
-        for part_name in sorted(all_parts):
-            eao_props = eao_data.get(part_name, {})
-            xml_props = xml_data.get(part_name, {})
-            
-            part_issues = []
-            part_valid = True
-            
-            # Check if part exists in both files
-            if part_name not in eao_data:
-                part_issues.append({
-                    'type': 'no_eao',
-                    'property': 'Part not found in EAO order file',
-                    'eao_value': '',
-                    'xml_value': '',
-                    'status': 'Missing in EAO'
-                })
-                validation_results['missing_properties_count'] += len(eao_props)
-                part_valid = False
-            elif part_name not in xml_data:
-                part_issues.append({
-                    'type': 'no_xml',
-                    'property': 'Part not found in XML report',
-                    'eao_value': '',
-                    'xml_value': '',
-                    'status': 'Missing in XML'
-                })
-                validation_results['missing_properties_count'] += len(eao_props)
-                part_valid = False
-            else:
-                # Check for missing SAP properties
-                for prop_name in eao_props.keys():
-                    if prop_name not in xml_props:
-                        eao_value = eao_props[prop_name]
-                        part_issues.append({
-                            'type': 'missing_property',
-                            'property': prop_name,
-                            'eao_value': eao_value,
-                            'xml_value': 'MISSING',
-                            'status': 'Missing SAP Property'
-                        })
-                        validation_results['missing_properties_count'] += 1
-                        part_valid = False
-            
-            if part_valid and part_name in eao_data and part_name in xml_data:
-                validation_results['valid_parts'] += 1
-            
-            # Add to issues if any found
-            if part_issues:
-                validation_results['issues'].append({
-                    'part_name': part_name,
-                    'issues': part_issues
-                })
-            
-            # Add detailed comparison
-            for prop_name in set(eao_props.keys()) | set(xml_props.keys()):
-                eao_value = eao_props.get(prop_name, 'N/A')
-                xml_value = xml_props.get(prop_name, 'N/A')
-                
-                if eao_value == 'N/A' and xml_value != 'N/A':
-                    status = 'Missing in EAO'
-                    status_color = 'error'
-                elif xml_value == 'N/A' and eao_value != 'N/A':
-                    status = 'Missing in XML'
-                    status_color = 'error'
-                elif eao_value != xml_value:
-                    status = 'Different'
-                    status_color = 'warning'
-                else:
-                    status = 'Match'
-                    status_color = 'success'
-                
-                validation_results['detailed_results'].append({
-                    'part_name': part_name,
-                    'property': prop_name,
-                    'eao_value': eao_value,
-                    'xml_value': xml_value,
-                    'status': status,
-                    'status_color': status_color
-                })
-        
-        # Calculate validation rate
-        if validation_results['total_parts'] > 0:
-            validation_results['validation_rate'] = (validation_results['valid_parts'] / validation_results['total_parts']) * 100
-        
-        return validation_results
 
-def create_metric_cards(validation_results: Dict):
+def create_metric_cards(validation_results: dict):
     """Create metric cards for the dashboard"""
     col1, col2, col3, col4 = st.columns(4)
     
@@ -313,7 +132,8 @@ def create_metric_cards(validation_results: Dict):
         </div>
         """, unsafe_allow_html=True)
 
-def create_validation_chart(validation_results: Dict):
+
+def create_validation_chart(validation_results: dict):
     """Create a validation chart"""
     fig = go.Figure()
     
@@ -340,7 +160,8 @@ def create_validation_chart(validation_results: Dict):
     
     st.plotly_chart(fig, use_container_width=True)
 
-def display_missing_properties(validation_results: Dict):
+
+def display_missing_properties(validation_results: dict):
     """Display missing SAP properties with expand/collapse controls"""
     if not validation_results['issues']:
         st.markdown("""
@@ -381,7 +202,8 @@ def display_missing_properties(validation_results: Dict):
                     </div>
                     """, unsafe_allow_html=True)
 
-def display_detailed_results(validation_results: Dict):
+
+def display_detailed_results(validation_results: dict):
     """Display detailed results in a better grouped format with expand/collapse controls"""
     if not validation_results['detailed_results']:
         st.info("No detailed results to display.")
@@ -452,143 +274,8 @@ def display_detailed_results(validation_results: Dict):
             else:
                 st.success(f"All properties valid for part {part_name}")
 
-def generate_pdf_report(validation_results: Dict) -> bytes:
-    """Generate a professional PDF report"""
-    if not PDF_AVAILABLE:
-        return None
-    
-    buffer = io.BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=A4, rightMargin=72, leftMargin=72, topMargin=72, bottomMargin=18)
-    
-    # Get styles
-    styles = getSampleStyleSheet()
-    title_style = ParagraphStyle(
-        'CustomTitle',
-        parent=styles['Heading1'],
-        fontSize=24,
-        spaceAfter=30,
-        alignment=TA_CENTER,
-        textColor=colors.darkblue
-    )
-    heading_style = ParagraphStyle(
-        'CustomHeading',
-        parent=styles['Heading2'],
-        fontSize=16,
-        spaceAfter=12,
-        textColor=colors.darkblue
-    )
-    
-    # Build story
-    story = []
-    
-    # Title
-    story.append(Paragraph("SAP Confirmation Validator Report", title_style))
-    story.append(Spacer(1, 12))
-    
-    # Timestamp
-    story.append(Paragraph(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
-    story.append(Spacer(1, 20))
-    
-    # Executive Summary
-    story.append(Paragraph("Executive Summary", heading_style))
-    story.append(Spacer(1, 12))
-    
-    summary_data = [
-        ['Metric', 'Value'],
-        ['Total Parts Validated', str(validation_results['total_parts'])],
-        ['Parts with Complete SAP Data', str(validation_results['valid_parts'])],
-        ['Missing SAP Properties', str(validation_results['missing_properties_count'])],
-        ['Validation Success Rate', f"{validation_results['validation_rate']:.1f}%"]
-    ]
-    
-    summary_table = Table(summary_data, colWidths=[3*inch, 2*inch])
-    summary_table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 12),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black)
-    ]))
-    
-    story.append(summary_table)
-    story.append(Spacer(1, 20))
-    
-    # Detailed Results
-    if validation_results['detailed_results']:
-        story.append(Paragraph("Detailed Validation Results", heading_style))
-        story.append(Spacer(1, 12))
-        
-        # Group by part
-        grouped_results = {}
-        for result in validation_results['detailed_results']:
-            part_name = result['part_name']
-            if part_name not in grouped_results:
-                grouped_results[part_name] = []
-            grouped_results[part_name].append(result)
-        
-        for part_name in sorted(grouped_results.keys()):
-            part_results = grouped_results[part_name]
-            issue_count = sum(1 for r in part_results if r['status'] != 'Match')
-            
-            story.append(Paragraph(f"Part: {part_name} ({len(part_results)} properties, {issue_count} issues)", styles['Heading3']))
-            
-            # Table for this part
-            table_data = [['SAP Property', 'EAO Value', 'XML Value', 'Status']]
-            for result in part_results:
-                table_data.append([
-                    result['property'],
-                    result['eao_value'] or 'N/A',
-                    result['xml_value'] or 'N/A',
-                    result['status']
-                ])
-            
-            part_table = Table(table_data, colWidths=[2*inch, 2*inch, 2*inch, 1.5*inch])
-            part_table.setStyle(TableStyle([
-                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), 10),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black),
-                ('FONTSIZE', (0, 1), (-1, -1), 9)
-            ]))
-            
-            story.append(part_table)
-            story.append(Spacer(1, 12))
-            
-            if issue_count > 0:
-                story.append(Paragraph(f"Warning: {issue_count} properties need attention", styles['Normal']))
-            else:
-                story.append(Paragraph("Success: All properties valid", styles['Normal']))
-            
-            story.append(Spacer(1, 12))
-    
-    # Build PDF
-    doc.build(story)
-    buffer.seek(0)
-    return buffer.getvalue()
 
-def generate_json_report(validation_results: Dict) -> str:
-    """Generate JSON report"""
-    report = {
-        'timestamp': datetime.now().isoformat(),
-        'summary': {
-            'total_parts': validation_results['total_parts'],
-            'valid_parts': validation_results['valid_parts'],
-            'missing_properties_count': validation_results['missing_properties_count'],
-            'validation_rate': validation_results['validation_rate']
-        },
-        'issues': validation_results['issues'],
-        'detailed_results': validation_results['detailed_results']
-    }
-    return json.dumps(report, indent=2)
-
-def create_export_section(validation_results: Dict):
+def create_export_section(validation_results: dict):
     """Create comprehensive export section"""
     st.markdown("### Export Options")
     
@@ -601,46 +288,28 @@ def create_export_section(validation_results: Dict):
     
     with col1:
         # CSV Export
-        df = pd.DataFrame(validation_results['detailed_results'])
-        csv = df.to_csv(index=False)
+        csv_data = ReportGenerator.generate_csv_report(validation_results)
         
         st.download_button(
             label="📊 CSV Report",
-            data=csv,
+            data=csv_data,
             file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
             mime="text/csv",
             use_container_width=True
         )
     
     with col2:
-        # Excel Export (if available)
-        try:
-            excel_buffer = io.BytesIO()
-            with pd.ExcelWriter(excel_buffer, engine='openpyxl') as writer:
-                # Summary sheet
-                summary_df = pd.DataFrame([
-                    ['Total Parts', validation_results['total_parts']],
-                    ['Valid Parts', validation_results['valid_parts']],
-                    ['Missing Properties', validation_results['missing_properties_count']],
-                    ['Validation Rate', f"{validation_results['validation_rate']:.1f}%"]
-                ], columns=['Metric', 'Value'])
-                summary_df.to_excel(writer, sheet_name='Summary', index=False)
-                
-                # Detailed results sheet
-                df = pd.DataFrame(validation_results['detailed_results'])
-                df.to_excel(writer, sheet_name='Detailed Results', index=False)
-            
-            excel_buffer.seek(0)
-            
+        # Excel Export
+        excel_data = ReportGenerator.generate_excel_report(validation_results)
+        if excel_data:
             st.download_button(
                 label="📈 Excel Report",
-                data=excel_buffer.getvalue(),
+                data=excel_data,
                 file_name=f"sap_validation_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 use_container_width=True
             )
-        except ImportError:
-            # Silently disable Excel export if openpyxl not available
+        else:
             st.download_button(
                 label="📈 Excel Report (Unavailable)",
                 data="",
@@ -653,7 +322,7 @@ def create_export_section(validation_results: Dict):
     with col3:
         # PDF Export
         if PDF_AVAILABLE:
-            pdf_data = generate_pdf_report(validation_results)
+            pdf_data = ReportGenerator.generate_pdf_report(validation_results)
             if pdf_data:
                 st.download_button(
                     label="📄 PDF Report",
@@ -672,7 +341,6 @@ def create_export_section(validation_results: Dict):
                     use_container_width=True
                 )
         else:
-            # Silently disable PDF export if reportlab not available
             st.download_button(
                 label="📄 PDF Report (Unavailable)",
                 data="",
@@ -684,7 +352,7 @@ def create_export_section(validation_results: Dict):
     
     with col4:
         # JSON Export
-        json_data = generate_json_report(validation_results)
+        json_data = ReportGenerator.generate_json_report(validation_results)
         st.download_button(
             label="📋 JSON Report",
             data=json_data,
@@ -702,17 +370,6 @@ def create_export_section(validation_results: Dict):
     with col1:
         # Print-friendly version
         if st.button("🖨️ Generate Print-Friendly Version"):
-            st.markdown("""
-            <style>
-            @media print {
-                .stApp { display: none; }
-                .print-content { display: block !important; }
-            }
-            </style>
-            <div class="print-content">
-            """, unsafe_allow_html=True)
-            
-            # Print-friendly summary
             st.markdown("#### SAP Validation Report")
             st.markdown(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
             
@@ -724,34 +381,18 @@ def create_export_section(validation_results: Dict):
                 st.metric("Missing Properties", validation_results['missing_properties_count'])
                 st.metric("Validation Rate", f"{validation_results['validation_rate']:.1f}%")
             
-            st.markdown("</div>", unsafe_allow_html=True)
             st.info("Use your browser's print function (Ctrl+P) to print this report")
     
     with col2:
         # Email report (copy to clipboard)
         if st.button("📧 Copy Report Summary"):
-            summary_text = f"""
-SAP Validation Report - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-
-Summary:
-- Total Parts: {validation_results['total_parts']}
-- Valid Parts: {validation_results['valid_parts']}
-- Missing Properties: {validation_results['missing_properties_count']}
-- Validation Rate: {validation_results['validation_rate']:.1f}%
-
-Issues Found: {len(validation_results['issues'])} parts have validation issues.
-
-Generated by SAP Confirmation Validator
-            """.strip()
-            
+            summary_text = ReportGenerator.generate_email_summary(validation_results)
             st.code(summary_text)
             st.success("Summary copied to clipboard! Paste into email or document.")
 
-def export_results(validation_results: Dict):
-    """Legacy export function - now redirects to comprehensive export"""
-    create_export_section(validation_results)
 
 def main():
+    """Main application function"""
     # Initialize session state
     if 'validator' not in st.session_state:
         st.session_state.validator = SAPConfirmationValidator()
@@ -786,20 +427,22 @@ def main():
     if eao_file and xml_file:
         if st.button("Validate SAP Properties", type="primary", use_container_width=True):
             with st.spinner("Validating SAP properties..."):
-                # Parse files
-                eao_content = eao_file.read().decode('utf-8')
-                xml_content = xml_file.read().decode('utf-8')
-                
-                eao_data = st.session_state.validator.parse_eao_file(eao_content)
-                xml_data = st.session_state.validator.parse_xml_report(xml_content)
-                
-                # Validate properties
-                validation_results = st.session_state.validator.validate_properties(eao_data, xml_data)
-                st.session_state.validation_results = validation_results
-                
-                # Store data for detailed views
-                st.session_state.eao_data = eao_data
-                st.session_state.xml_data = xml_data
+                try:
+                    # Parse files
+                    eao_content = eao_file.read().decode('utf-8')
+                    xml_content = xml_file.read().decode('utf-8')
+                    
+                    eao_data = st.session_state.validator.parse_eao_file(eao_content)
+                    xml_data = st.session_state.validator.parse_xml_report(xml_content)
+                    
+                    # Validate properties
+                    validation_results = st.session_state.validator.validate_properties(eao_data, xml_data)
+                    st.session_state.validation_results = validation_results
+                    
+                    st.success("Validation completed successfully!")
+                    
+                except Exception as e:
+                    st.error(f"Error during validation: {str(e)}")
     
     # Display results
     if st.session_state.validation_results:
@@ -844,6 +487,7 @@ def main():
         "</div>", 
         unsafe_allow_html=True
     )
+
 
 if __name__ == "__main__":
     main()
