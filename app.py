@@ -13,6 +13,7 @@ import os
 
 # Import core functionality
 from utils.sap_validator import SAPConfirmationValidator, ReportGenerator, PDF_AVAILABLE
+from utils.sample_data import load_default_samples, get_sample_files
 
 # Configure page
 st.set_page_config(
@@ -406,33 +407,103 @@ def main():
     
     # File upload section
     st.markdown("### Upload Files")
+    
+    # Check if sample files are available
+    sample_files = get_sample_files()
+    has_samples = len(sample_files) > 0
+    
+    if has_samples:
+        st.markdown("#### Quick Start: Load Sample Data")
+        col1, col2, col3 = st.columns([2, 1, 1])
+        
+        with col1:
+            st.info("🎯 Try our sample data to see the validator in action!")
+        
+        with col2:
+            if st.button("📥 Load Sample Files", type="secondary", use_container_width=True):
+                with st.spinner("Loading sample data..."):
+                    try:
+                        samples = load_default_samples()
+                        
+                        if 'eao_file' in samples and 'xml_file' in samples:
+                            # Store sample data in session state
+                            st.session_state.sample_eao_content = samples['eao_file']
+                            st.session_state.sample_xml_content = samples['xml_file']
+                            st.session_state.using_samples = True
+                            
+                            # Parse and validate immediately
+                            validator = SAPConfirmationValidator()
+                            eao_data = validator.parse_eao_file(samples['eao_file'])
+                            xml_data = validator.parse_xml_report(samples['xml_file'])
+                            validation_results = validator.validate_properties(eao_data, xml_data)
+                            st.session_state.validation_results = validation_results
+                            st.session_state.validator = validator
+                            
+                            st.success("✅ Sample data loaded and validated successfully!")
+                            st.rerun()
+                        else:
+                            st.error("❌ Sample files not found")
+                    except Exception as e:
+                        st.error(f"❌ Error loading sample data: {str(e)}")
+        
+        with col3:
+            if st.button("🔄 Clear Samples", use_container_width=True):
+                st.session_state.using_samples = False
+                if 'sample_eao_content' in st.session_state:
+                    del st.session_state.sample_eao_content
+                if 'sample_xml_content' in st.session_state:
+                    del st.session_state.sample_xml_content
+                if 'validation_results' in st.session_state:
+                    del st.session_state.validation_results
+                st.rerun()
+        
+        st.markdown("---")
+        st.markdown("#### Or Upload Your Own Files")
+    
     col1, col2 = st.columns(2)
     
+    # Check if we're using sample data
+    using_samples = st.session_state.get('using_samples', False)
+    
     with col1:
-        eao_file = st.file_uploader(
-            "EAO Order File (.eao.suc)",
-            type=['suc', 'xml'],
-            key="eao_file",
-            help="Upload the EAO order file containing production orders"
-        )
+        if using_samples and 'sample_eao_content' in st.session_state:
+            st.success("📄 Using sample EAO file")
+            st.info("Sample: -V90063_64-20260224103356.eao.suc")
+        else:
+            eao_file = st.file_uploader(
+                "EAO Order File (.eao.suc)",
+                type=['suc', 'xml'],
+                key="eao_file",
+                help="Upload the EAO order file containing production orders"
+            )
     
     with col2:
-        xml_file = st.file_uploader(
-            "XML Report (.xml)",
-            type=['xml'],
-            key="xml_file",
-            help="Upload the exported XML report file"
-        )
+        if using_samples and 'sample_xml_content' in st.session_state:
+            st.success("📋 Using sample XML file")
+            st.info("Sample: 20260225095318_-V90063_64_0224_01_20260225_095103.XML")
+        else:
+            xml_file = st.file_uploader(
+                "XML Report (.xml)",
+                type=['xml'],
+                key="xml_file",
+                help="Upload the exported XML report file"
+            )
     
     # Validation button
-    if eao_file and xml_file:
+    if using_samples or (eao_file and xml_file):
         if st.button("Validate SAP Properties", type="primary", use_container_width=True):
             with st.spinner("Validating SAP properties..."):
                 try:
-                    # Parse files
-                    eao_content = eao_file.read().decode('utf-8')
-                    xml_content = xml_file.read().decode('utf-8')
+                    if using_samples:
+                        # Use sample data
+                        eao_content = st.session_state.sample_eao_content
+                        xml_content = st.session_state.sample_xml_content
+                    else:
+                        # Use uploaded files
+                        eao_content = eao_file.read().decode('utf-8')
+                        xml_content = xml_file.read().decode('utf-8')
                     
+                    # Parse files
                     eao_data = st.session_state.validator.parse_eao_file(eao_content)
                     xml_data = st.session_state.validator.parse_xml_report(xml_content)
                     
@@ -440,7 +511,8 @@ def main():
                     validation_results = st.session_state.validator.validate_properties(eao_data, xml_data)
                     st.session_state.validation_results = validation_results
                     
-                    st.success("Validation completed successfully!")
+                    if not using_samples:
+                        st.success("Validation completed successfully!")
                     
                 except Exception as e:
                     st.error(f"Error during validation: {str(e)}")
