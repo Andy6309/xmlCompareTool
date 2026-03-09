@@ -417,10 +417,10 @@ def main():
         col1, col2, col3 = st.columns([2, 1, 1])
         
         with col1:
-            st.info("🎯 Try our sample data to see the validator in action!")
+            st.info("Try our sample data to see the validator in action!")
         
         with col2:
-            if st.button("📥 Load Sample Files", type="secondary", use_container_width=True):
+            if st.button("Load Sample Files", type="secondary", use_container_width=True):
                 with st.spinner("Loading sample data..."):
                     try:
                         samples = load_default_samples()
@@ -439,15 +439,15 @@ def main():
                             st.session_state.validation_results = validation_results
                             st.session_state.validator = validator
                             
-                            st.success("✅ Sample data loaded and validated successfully!")
+                            st.success("Sample data loaded and validated successfully!")
                             st.rerun()
                         else:
-                            st.error("❌ Sample files not found")
+                            st.error("Sample files not found")
                     except Exception as e:
-                        st.error(f"❌ Error loading sample data: {str(e)}")
+                        st.error(f"Error loading sample data: {str(e)}")
         
         with col3:
-            if st.button("🔄 Clear Samples", use_container_width=True):
+            if st.button("Clear Samples", use_container_width=True):
                 st.session_state.using_samples = False
                 if 'sample_eao_content' in st.session_state:
                     del st.session_state.sample_eao_content
@@ -467,7 +467,7 @@ def main():
     
     with col1:
         if using_samples and 'sample_eao_content' in st.session_state:
-            st.success("📄 Using sample EAO file")
+            st.success("Using sample EAO file")
             st.info("Sample: -V90063_64-20260224103356.eao.suc")
         else:
             eao_file = st.file_uploader(
@@ -479,7 +479,7 @@ def main():
     
     with col2:
         if using_samples and 'sample_xml_content' in st.session_state:
-            st.success("📋 Using sample XML file")
+            st.success("Using sample XML file")
             st.info("Sample: 20260225095318_-V90063_64_0224_01_20260225_095103.XML")
         else:
             xml_file = st.file_uploader(
