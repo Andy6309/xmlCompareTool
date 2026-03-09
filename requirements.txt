@@ -1,0 +1,7 @@
+# XML Comparison Tool Requirements
+customtkinter>=5.2.0
+
+# Additional optional dependencies for enhanced functionality:
+# lxml>=4.6.0  # For faster XML processing with large files
+# pandas>=1.3.0  # For data analysis and export capabilities
+# openpyxl>=3.0.0  # For Excel export functionality

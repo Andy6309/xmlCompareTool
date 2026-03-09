@@ -1,0 +1,460 @@
+<BlankingTaskCreatedReport>
+  <CreatedTime>2026-02-25T09:51:03</CreatedTime>
+  <CreatedTimeUtc>2026-02-25T15:51:03</CreatedTimeUtc>
+  <BatchName>-V90063_64_0224_01</BatchName>
+  <BatchRepetitionCount>1</BatchRepetitionCount>
+  <Machine>2620</Machine>
+  <Nests>
+    <Nest>
+      <NestName>-V90063_64_0224_01001</NestName>
+      <EstimatedDuration>1685</EstimatedDuration>
+      <TotalSheetCount>1</TotalSheetCount>
+      <SheetUtilization>80.5</SheetUtilization>
+      <WeightUsed>53.71289</WeightUsed>
+      <NetWeightUsed>42.80254</NetWeightUsed>
+      <AreaUsed>4.64515</AreaUsed>
+      <NetAreaUsed>3.70161</NetAreaUsed>
+      <Material>
+        <Name>GALVANIZED</Name>
+        <SheetX>3048.0000</SheetX>
+        <SheetY>1524.0000</SheetY>
+        <Thickness>1.4732</Thickness>
+        <MaterialCode>165832</MaterialCode>
+      </Material>
+      <Parts>
+        <Part>
+          <Name>1534230</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>2</Quantity>
+          <WeightUsed>4.08762</WeightUsed>
+          <NetWeightUsed>3.27716</NetWeightUsed>
+          <AreaUsed>0.35350</AreaUsed>
+          <NetAreaUsed>0.28341</NetAreaUsed>
+          <EstimatedRuntime>117.78</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>3.3105030891317</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>1</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1535195</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>2</Quantity>
+          <WeightUsed>4.08762</WeightUsed>
+          <NetWeightUsed>3.27762</NetWeightUsed>
+          <AreaUsed>0.35350</AreaUsed>
+          <NetAreaUsed>0.28345</NetAreaUsed>
+          <EstimatedRuntime>111.58</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>3.3105030891317</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>2</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1538903</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>3.58645</WeightUsed>
+          <NetWeightUsed>2.86960</NetWeightUsed>
+          <AreaUsed>0.31016</AreaUsed>
+          <NetAreaUsed>0.24817</NetAreaUsed>
+          <EstimatedRuntime>116.47</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211422606</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12496A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">211422647</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>2.8992626387186</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>3</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1538904</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>3.58645</WeightUsed>
+          <NetWeightUsed>2.87006</NetWeightUsed>
+          <AreaUsed>0.31016</AreaUsed>
+          <NetAreaUsed>0.24821</NetAreaUsed>
+          <EstimatedRuntime>111.51</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211422615</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12504C</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">211422647</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>2.8992626387186</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>4</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537279</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>2</Quantity>
+          <WeightUsed>3.40075</WeightUsed>
+          <NetWeightUsed>2.69905</NetWeightUsed>
+          <AreaUsed>0.29410</AreaUsed>
+          <NetAreaUsed>0.23342</NetAreaUsed>
+          <EstimatedRuntime>110.14</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>2.7296100204912</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>5</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537278</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>4</Quantity>
+          <WeightUsed>3.40075</WeightUsed>
+          <NetWeightUsed>2.69858</NetWeightUsed>
+          <AreaUsed>0.29410</AreaUsed>
+          <NetAreaUsed>0.23337</NetAreaUsed>
+          <EstimatedRuntime>111.32</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>2.7296100204912</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>6</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537279</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>2</Quantity>
+          <WeightUsed>3.40075</WeightUsed>
+          <NetWeightUsed>2.69905</NetWeightUsed>
+          <AreaUsed>0.29410</AreaUsed>
+          <NetAreaUsed>0.23342</NetAreaUsed>
+          <EstimatedRuntime>110.14</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>2.7296100204912</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>7</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537913</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>2.98354</WeightUsed>
+          <NetWeightUsed>2.36283</NetWeightUsed>
+          <AreaUsed>0.25802</AreaUsed>
+          <NetAreaUsed>0.20434</NetAreaUsed>
+          <EstimatedRuntime>112.08</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211422605</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12414A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">211422647</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>2.3901777781728</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>8</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+      </Parts>
+    </Nest>
+    <Nest>
+      <NestName>-V90063_64_0224_01002</NestName>
+      <EstimatedDuration>2789</EstimatedDuration>
+      <TotalSheetCount>1</TotalSheetCount>
+      <SheetUtilization>77.7</SheetUtilization>
+      <WeightUsed>53.71289</WeightUsed>
+      <NetWeightUsed>41.54985</NetWeightUsed>
+      <AreaUsed>4.64515</AreaUsed>
+      <NetAreaUsed>3.59328</NetAreaUsed>
+      <Material>
+        <Name>GALVANIZED</Name>
+        <SheetX>3048.0000</SheetX>
+        <SheetY>1524.0000</SheetY>
+        <Thickness>1.4732</Thickness>
+        <MaterialCode>165832</MaterialCode>
+      </Material>
+      <Parts>
+        <Part>
+          <Name>1534225</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>5</Quantity>
+          <WeightUsed>2.67739</WeightUsed>
+          <NetWeightUsed>2.07685</NetWeightUsed>
+          <AreaUsed>0.23154</AreaUsed>
+          <NetAreaUsed>0.17961</NetAreaUsed>
+          <EstimatedRuntime>98.28</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>2.0816805354884</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>1</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1538902</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>3.07417</WeightUsed>
+          <NetWeightUsed>2.36236</NetWeightUsed>
+          <AreaUsed>0.26586</AreaUsed>
+          <NetAreaUsed>0.20430</NetAreaUsed>
+          <EstimatedRuntime>120.06</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211422614</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12406C</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">211422647</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>2.3901777781728</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>2</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1534225</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>2.67739</WeightUsed>
+          <NetWeightUsed>2.07685</NetWeightUsed>
+          <AreaUsed>0.23154</AreaUsed>
+          <NetAreaUsed>0.17961</NetAreaUsed>
+          <EstimatedRuntime>98.28</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211245393</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12512A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">205215336</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>2.0816805354884</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>3</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537130</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>2.20622</WeightUsed>
+          <NetWeightUsed>1.71190</NetWeightUsed>
+          <AreaUsed>0.19080</AreaUsed>
+          <NetAreaUsed>0.14804</NetAreaUsed>
+          <EstimatedRuntime>94.80</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211245391</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12422A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         1.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">205215336</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>1.7153457297053</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>4</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1534317</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>4</Quantity>
+          <WeightUsed>1.84938</WeightUsed>
+          <NetWeightUsed>1.43307</NetWeightUsed>
+          <AreaUsed>0.15994</AreaUsed>
+          <NetAreaUsed>0.12394</NetAreaUsed>
+          <EstimatedRuntime>95.13</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>1.4378968847474</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>5</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537476</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>3</Quantity>
+          <WeightUsed>1.12286</WeightUsed>
+          <NetWeightUsed>0.86866</NetWeightUsed>
+          <AreaUsed>0.09710</AreaUsed>
+          <NetAreaUsed>0.07512</NetAreaUsed>
+          <EstimatedRuntime>97.36</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211208011</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12536A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">        16.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">210941007</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>0.8730246986153</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>6</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537130</Name>
+          <OrderNumber></OrderNumber>
+          <AssemblyName></AssemblyName>
+          <Quantity>5</Quantity>
+          <WeightUsed>2.20622</WeightUsed>
+          <NetWeightUsed>1.71190</NetWeightUsed>
+          <AreaUsed>0.19080</AreaUsed>
+          <NetAreaUsed>0.14804</NetAreaUsed>
+          <EstimatedRuntime>94.80</EstimatedRuntime>
+          <AdditionalProperties />
+          <WeightOutside>1.7153457297053</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>7</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537135</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>8</Quantity>
+          <WeightUsed>1.18101</WeightUsed>
+          <NetWeightUsed>0.90605</NetWeightUsed>
+          <AreaUsed>0.10214</AreaUsed>
+          <NetAreaUsed>0.07835</NetAreaUsed>
+          <EstimatedRuntime>92.58</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211208008</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12528A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         8.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">210941007</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>0.9182387860569</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>8</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537476</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>1</Quantity>
+          <WeightUsed>1.12286</WeightUsed>
+          <NetWeightUsed>0.86866</NetWeightUsed>
+          <AreaUsed>0.09710</AreaUsed>
+          <NetAreaUsed>0.07512</NetAreaUsed>
+          <EstimatedRuntime>97.36</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211208011</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12536A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">        16.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">210941007</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>0.8730246986153</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>9</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+      </Parts>
+    </Nest>
+    <Nest>
+      <NestName>-V90063_64_0224_01003</NestName>
+      <EstimatedDuration>1926</EstimatedDuration>
+      <TotalSheetCount>1</TotalSheetCount>
+      <SheetUtilization>33.1</SheetUtilization>
+      <WeightUsed>53.71289</WeightUsed>
+      <NetWeightUsed>17.67575</NetWeightUsed>
+      <AreaUsed>4.64515</AreaUsed>
+      <NetAreaUsed>1.52862</NetAreaUsed>
+      <Material>
+        <Name>GALVANIZED</Name>
+        <SheetX>3048.0000</SheetX>
+        <SheetY>1524.0000</SheetY>
+        <Thickness>1.4732</Thickness>
+        <MaterialCode>165832</MaterialCode>
+      </Material>
+      <Parts>
+        <Part>
+          <Name>1537476</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>12</Quantity>
+          <WeightUsed>2.63114</WeightUsed>
+          <NetWeightUsed>0.86866</NetWeightUsed>
+          <AreaUsed>0.22754</AreaUsed>
+          <NetAreaUsed>0.07512</NetAreaUsed>
+          <EstimatedRuntime>97.17</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211208011</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12536A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">        16.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">210941007</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>0.8730246986153</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>1</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+        <Part>
+          <Name>1537134</Name>
+          <OrderNumber>-V90063_64</OrderNumber>
+          <AssemblyName>-V90063_64</AssemblyName>
+          <Quantity>8</Quantity>
+          <WeightUsed>2.76740</WeightUsed>
+          <NetWeightUsed>0.90651</NetWeightUsed>
+          <AreaUsed>0.23933</AreaUsed>
+          <NetAreaUsed>0.07839</NetAreaUsed>
+          <EstimatedRuntime>95.05</EstimatedRuntime>
+          <AdditionalProperties>
+            <AdditionalProperty id="PartProdOrder" type="">211208010</AdditionalProperty>
+            <AdditionalProperty id="PartNo" type="">FLX12520A</AdditionalProperty>
+            <AdditionalProperty id="TotalOrderQty" type="">         8.000</AdditionalProperty>
+            <AdditionalProperty id="NestedWC" type="">2620</AdditionalProperty>
+            <AdditionalProperty id="RoutingSeq" type="">0010</AdditionalProperty>
+            <AdditionalProperty id="ParentProdOrder" type="">210941007</AdditionalProperty>
+            <AdditionalProperty id="MaterialCode" type="">GA</AdditionalProperty>
+          </AdditionalProperties>
+          <WeightOutside>0.9182387860569</WeightOutside>
+          <PartType>Normal</PartType>
+          <IdInXml>2</IdInXml>
+          <GroupPartIdInXml>0</GroupPartIdInXml>
+        </Part>
+      </Parts>
+    </Nest>
+  </Nests>
+  <TaskId>task-64</TaskId>
+  <ScheduledDateTime>2026-02-25T15:04:41</ScheduledDateTime>
+</BlankingTaskCreatedReport>

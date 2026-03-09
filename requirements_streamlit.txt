@@ -1,0 +1,15 @@
+# SAP Confirmation Validator - Streamlit Version
+streamlit>=1.28.0
+pandas>=1.5.0
+plotly>=5.15.0
+
+# PDF Generation
+reportlab>=3.6.0
+
+# Excel Export
+openpyxl>=3.0.0
+
+# Optional dependencies for enhanced functionality:
+# xmltodict>=0.13.0  # For alternative XML parsing
+# streamlit-aggrid>=0.3.0  # For advanced data grids
+# streamlit-plotly-events>=0.0.6  # For interactive plotly charts

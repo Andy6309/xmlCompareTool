@@ -1,0 +1,1176 @@
+<?xml version="1.0"?>
+<ErpAssemblyOrder>
+ <ErpReference>-V90063_64</ErpReference>
+ <Quantity>1</Quantity>
+ <DueDate>2026-02-24</DueDate>
+ <Description/>
+ <IsAutostartAllowed>False</IsAutostartAllowed>
+ <Assembly>
+  <Name>-V90063_64</Name>
+  <Workstep>Assembling</Workstep>
+  <QuantityFactor>1</QuantityFactor>
+  <SubItems>
+   <ErpOrderItem>
+    <Name>1537135</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,LP RF RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>8 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211208008</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537135</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>8 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211208008)(2615)(210941007)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211208008</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12528A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         8.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">210941007</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537134</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,LP RF LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>8 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211208010</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537134</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>8 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211208010)(2615)(210941007)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211208010</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12520A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         8.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">210941007</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537476</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,LP RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>16 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211208011</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537476</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>16 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211208011)(2615)(210941007)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211208011</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12536A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">        16.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">210941007</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537279</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245390</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537279</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245390)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245390</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12414A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245391</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245391)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245391</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534230</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245392</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534230</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245392)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245392</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12496A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245393</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245393)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245393</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537279</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245400</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537279</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245400)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245400</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12414B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537278</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245401</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537278</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245401)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245401</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12406B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245402</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245402)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245402</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245403</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245403)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245403</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537278</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245410</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537278</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245410)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245410</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12406C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245411</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245411)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245411</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1535195</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245412</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1535195</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245412)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245412</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12504C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245413</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245413)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245413</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537279</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245420</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537279</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245420)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245420</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12414A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245421</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245421)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245421</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534230</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245422</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534230</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245422)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245422</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12496A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245423</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245423)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245423</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537279</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245430</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537279</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245430)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245430</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12414B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537278</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245431</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537278</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245431)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245431</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12406B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245432</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245432)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245432</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245433</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245433)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245433</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512B</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537278</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245440</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537278</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245440)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245440</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12406C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537130</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN CHNL 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245441</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537130</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245441)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245441</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12422C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1535195</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245442</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1535195</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245442)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245442</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12504C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534225</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211245443</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534225</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211245443)(2615)(205215336)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211245443</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">205215336</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1537913</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422605</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1537913</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422605)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422605</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12414A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1538903</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422606</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1538903</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422606)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422606</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12496A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534317</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>2 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422607</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534317</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>2 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422607)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422607</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512A</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         2.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1538902</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN CHNL LH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422614</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1538902</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422614)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422614</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12406C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1538904</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,JB,STAN RF RH 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>1 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422615</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1538904</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>1 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422615)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422615</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12504C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         1.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+   <ErpOrderItem>
+    <Name>1534317</Name>
+    <Workstep>Blanking</Workstep>
+    <Description>FR,HD/SL,STAN RF 16GA GALV</Description>
+    <Machine>2620</Machine>
+    <QuantityFactor>2 </QuantityFactor>
+    <AdditionalProperties>
+     <AdditionalProperty id="PartProdOrder">211422616</AdditionalProperty>
+     <AdditionalProperty id="WorkCenter">2620</AdditionalProperty>
+    </AdditionalProperties>
+    <SubItems>
+     <ErpOrderItem>
+      <Name>1534317</Name>
+      <Workstep>Nesting</Workstep>
+      <QuantityFactor>2 </QuantityFactor>
+      <NestingInfo>
+       <AssemblyId>_-V90063_64</AssemblyId>
+       <NextPhase/>
+       <Material>GALVANIZED</Material>
+       <Thickness>0.0580</Thickness>
+       <Machine/>
+       <ProductionLabel>(211422616)(2615)(211422647)(-V90063_64)</ProductionLabel>
+      </NestingInfo>
+      <AdditionalProperties>
+       <AdditionalProperty id="PartProdOrder">211422616</AdditionalProperty>
+       <AdditionalProperty id="PartNo">FLX12512C</AdditionalProperty>
+       <AdditionalProperty id="TotalOrderQty">         2.000</AdditionalProperty>
+       <AdditionalProperty id="NestedWC">2620</AdditionalProperty>
+       <AdditionalProperty id="RoutingSeq">0010</AdditionalProperty>
+       <AdditionalProperty id="ParentProdOrder">211422647</AdditionalProperty>
+       <AdditionalProperty id="MaterialCode">GA</AdditionalProperty>
+      </AdditionalProperties>
+     </ErpOrderItem>
+    </SubItems>
+   </ErpOrderItem>
+  </SubItems>
+ </Assembly>
+ <Programs>
+    <Program>
+      <Path>\\sooner.greenops.com\CNC\PRIMA_DAMPERS\Tulsa Program Files\2100\Shared Nests\CG1530_GREENHECK_DAMP\-V90063_64_0224_01.zip</Path>
+      <Machine>2620</Machine>
+    </Program>
+  </Programs>
+</ErpAssemblyOrder>
