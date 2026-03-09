@@ -31,7 +31,7 @@ class SAPConfirmationValidator:
         self.xml_data = {}
     
     def parse_eao_file(self, file_content: str) -> Dict[str, Dict[str, str]]:
-        """Parse EAO file and extract additional properties grouped by part name"""
+        """Parse EAO file and extract additional properties from both blanking and nesting worksteps"""
         data = {}
         
         try:
@@ -42,22 +42,31 @@ class SAPConfirmationValidator:
                 name = item.find('Name')
                 workstep = item.find('Workstep')
                 
-                if name is not None:
+                if name is not None and workstep is not None:
                     part_name = name.text  # Use just the part name as the key
+                    workstep_name = workstep.text
+                    
                     if part_name not in data:
                         data[part_name] = {}
                     
-                    # Get AdditionalProperties from this workstep
+                    # Get AdditionalProperties from this workstep (both blanking and nesting)
                     add_props = item.find('AdditionalProperties')
                     if add_props is not None:
                         for prop in add_props.findall('AdditionalProperty'):
                             prop_id = prop.get('id')
                             prop_value = prop.text
                             if prop_id and prop_value:
-                                # Store with workstep prefix to avoid conflicts
-                                workstep_prefix = f"{workstep.text}_" if workstep else ""
+                                # Store with workstep prefix for clarity
+                                # For duplicate properties (like PartProdOrder), keep both with workstep prefix
+                                workstep_prefix = f"{workstep_name}_"
                                 data[part_name][f"{workstep_prefix}{prop_id}"] = prop_value.strip()
-                    
+                        
+            # Debug: Print what we found for verification
+            for part_name, props in data.items():
+                print(f"Part {part_name} has {len(props)} properties:")
+                for prop_name, prop_value in props.items():
+                    print(f"  {prop_name}: {prop_value}")
+                        
         except Exception as e:
             raise Exception(f"Error parsing EAO file: {str(e)}")
         
@@ -124,7 +133,7 @@ class SAPConfirmationValidator:
                     'xml_value': '',
                     'status': 'Missing in EAO'
                 })
-                validation_results['missing_properties_count'] += len(eao_props)
+                validation_results['missing_properties_count'] += len(xml_props)
                 part_valid = False
             elif part_name not in xml_data:
                 part_issues.append({
@@ -137,10 +146,23 @@ class SAPConfirmationValidator:
                 validation_results['missing_properties_count'] += len(eao_props)
                 part_valid = False
             else:
-                # Check for missing SAP properties
-                for prop_name in eao_props.keys():
+                # Create a mapping of EAO properties to base property names for comparison
+                # XML only has base names (no workstep prefixes)
+                eao_base_props = {}
+                for prop_key, prop_value in eao_props.items():
+                    if '_' in prop_key:
+                        # Remove workstep prefix (e.g., "Blanking_PartProdOrder" -> "PartProdOrder")
+                        base_prop = prop_key.split('_', 1)[1]
+                        # If property already exists, prioritize nesting over blanking
+                        if base_prop not in eao_base_props or 'Nesting_' in prop_key:
+                            eao_base_props[base_prop] = prop_value
+                    else:
+                        eao_base_props[prop_key] = prop_value
+                
+                # Check for missing SAP properties (using base names)
+                for prop_name in eao_base_props.keys():
                     if prop_name not in xml_props:
-                        eao_value = eao_props[prop_name]
+                        eao_value = eao_base_props[prop_name]
                         part_issues.append({
                             'type': 'missing_property',
                             'property': prop_name,
@@ -150,6 +172,33 @@ class SAPConfirmationValidator:
                         })
                         validation_results['missing_properties_count'] += 1
                         part_valid = False
+                
+                # Add detailed comparison (using base names for matching)
+                for prop_name in set(eao_base_props.keys()) | set(xml_props.keys()):
+                    eao_value = eao_base_props.get(prop_name, 'N/A')
+                    xml_value = xml_props.get(prop_name, 'N/A')
+                    
+                    if eao_value == 'N/A' and xml_value != 'N/A':
+                        status = 'Missing in EAO'
+                        status_color = 'error'
+                    elif xml_value == 'N/A' and eao_value != 'N/A':
+                        status = 'Missing in XML'
+                        status_color = 'error'
+                    elif eao_value != xml_value:
+                        status = 'Different'
+                        status_color = 'warning'
+                    else:
+                        status = 'Match'
+                        status_color = 'success'
+                    
+                    validation_results['detailed_results'].append({
+                        'part_name': part_name,
+                        'property': prop_name,
+                        'eao_value': eao_value,
+                        'xml_value': xml_value,
+                        'status': status,
+                        'status_color': status_color
+                    })
             
             if part_valid and part_name in eao_data and part_name in xml_data:
                 validation_results['valid_parts'] += 1
@@ -159,33 +208,6 @@ class SAPConfirmationValidator:
                 validation_results['issues'].append({
                     'part_name': part_name,
                     'issues': part_issues
-                })
-            
-            # Add detailed comparison
-            for prop_name in set(eao_props.keys()) | set(xml_props.keys()):
-                eao_value = eao_props.get(prop_name, 'N/A')
-                xml_value = xml_props.get(prop_name, 'N/A')
-                
-                if eao_value == 'N/A' and xml_value != 'N/A':
-                    status = 'Missing in EAO'
-                    status_color = 'error'
-                elif xml_value == 'N/A' and eao_value != 'N/A':
-                    status = 'Missing in XML'
-                    status_color = 'error'
-                elif eao_value != xml_value:
-                    status = 'Different'
-                    status_color = 'warning'
-                else:
-                    status = 'Match'
-                    status_color = 'success'
-                
-                validation_results['detailed_results'].append({
-                    'part_name': part_name,
-                    'property': prop_name,
-                    'eao_value': eao_value,
-                    'xml_value': xml_value,
-                    'status': status,
-                    'status_color': status_color
                 })
         
         # Calculate validation rate
