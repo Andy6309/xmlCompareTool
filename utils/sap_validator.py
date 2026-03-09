@@ -82,14 +82,19 @@ class SAPConfirmationValidator:
             # Find all Part elements
             for part in root.findall('.//Part'):
                 name = part.find('Name')
+                quantity = part.find('Quantity')
+                add_props = part.find('AdditionalProperties')
                 
                 if name is not None:
-                    part_name = name.text  # Use just the part name as the key
+                    part_name = name.text
                     if part_name not in data:
                         data[part_name] = {}
                     
-                    # Get AdditionalProperties
-                    add_props = part.find('AdditionalProperties')
+                    # Always store quantity as a special property
+                    if quantity is not None:
+                        data[part_name]['_quantity'] = quantity.text
+                    
+                    # Get AdditionalProperties if they exist
                     if add_props is not None:
                         for prop in add_props.findall('AdditionalProperty'):
                             prop_id = prop.get('id')
@@ -98,7 +103,7 @@ class SAPConfirmationValidator:
                                 data[part_name][prop_id] = prop_value.strip()
                     
         except Exception as e:
-            raise Exception(f"Error parsing XML report: {str(e)}")
+            raise Exception(f"Error parsing XML report file: {str(e)}")
         
         return data
     
@@ -159,46 +164,77 @@ class SAPConfirmationValidator:
                     else:
                         eao_base_props[prop_key] = prop_value
                 
-                # Check for missing SAP properties (using base names)
-                for prop_name in eao_base_props.keys():
-                    if prop_name not in xml_props:
+                # Check if XML part has no AdditionalProperties (only quantity)
+                xml_quantity = xml_props.get('_quantity', 'N/A')
+                xml_additional_props = {k: v for k, v in xml_props.items() if not k.startswith('_')}
+                
+                if not xml_additional_props and xml_quantity != 'N/A':
+                    # Part exists in XML but has no AdditionalProperties - this is INVALID
+                    # First show the production quantity
+                    validation_results['detailed_results'].append({
+                        'part_name': part_name,
+                        'property': 'Production Quantity',
+                        'eao_value': 'N/A',
+                        'xml_value': xml_quantity,
+                        'status': 'Part Produced',
+                        'status_color': 'warning'
+                    })
+                    
+                    # Then show all the missing SAP properties that should have been there
+                    for prop_name in eao_base_props.keys():
                         eao_value = eao_base_props[prop_name]
-                        part_issues.append({
-                            'type': 'missing_property',
+                        validation_results['detailed_results'].append({
+                            'part_name': part_name,
                             'property': prop_name,
                             'eao_value': eao_value,
                             'xml_value': 'MISSING',
-                            'status': 'Missing SAP Property'
+                            'status': 'Missing SAP Property',
+                            'status_color': 'error'
                         })
-                        validation_results['missing_properties_count'] += 1
-                        part_valid = False
-                
-                # Add detailed comparison (using base names for matching)
-                for prop_name in set(eao_base_props.keys()) | set(xml_props.keys()):
-                    eao_value = eao_base_props.get(prop_name, 'N/A')
-                    xml_value = xml_props.get(prop_name, 'N/A')
+                    # This part is INVALID because it's missing all SAP properties
+                    validation_results['missing_properties_count'] += len(eao_base_props)
+                    part_valid = False
+                else:
+                    # Check for missing SAP properties (using base names)
+                    for prop_name in eao_base_props.keys():
+                        if prop_name not in xml_additional_props:
+                            eao_value = eao_base_props[prop_name]
+                            part_issues.append({
+                                'type': 'missing_property',
+                                'property': prop_name,
+                                'eao_value': eao_value,
+                                'xml_value': 'MISSING',
+                                'status': 'Missing SAP Property'
+                            })
+                            validation_results['missing_properties_count'] += 1
+                            part_valid = False
                     
-                    if eao_value == 'N/A' and xml_value != 'N/A':
-                        status = 'Missing in EAO'
-                        status_color = 'error'
-                    elif xml_value == 'N/A' and eao_value != 'N/A':
-                        status = 'Missing in XML'
-                        status_color = 'error'
-                    elif eao_value != xml_value:
-                        status = 'Different'
-                        status_color = 'warning'
-                    else:
-                        status = 'Match'
-                        status_color = 'success'
-                    
-                    validation_results['detailed_results'].append({
-                        'part_name': part_name,
-                        'property': prop_name,
-                        'eao_value': eao_value,
-                        'xml_value': xml_value,
-                        'status': status,
-                        'status_color': status_color
-                    })
+                    # Add detailed comparison (using base names for matching)
+                    for prop_name in set(eao_base_props.keys()) | set(xml_additional_props.keys()):
+                        eao_value = eao_base_props.get(prop_name, 'N/A')
+                        xml_value = xml_additional_props.get(prop_name, 'N/A')
+                        
+                        if eao_value == 'N/A' and xml_value != 'N/A':
+                            status = 'Missing in EAO'
+                            status_color = 'error'
+                        elif xml_value == 'N/A' and eao_value != 'N/A':
+                            status = 'Missing in XML'
+                            status_color = 'error'
+                        elif eao_value != xml_value:
+                            status = 'Different'
+                            status_color = 'warning'
+                        else:
+                            status = 'Match'
+                            status_color = 'success'
+                        
+                        validation_results['detailed_results'].append({
+                            'part_name': part_name,
+                            'property': prop_name,
+                            'eao_value': eao_value,
+                            'xml_value': xml_value,
+                            'status': status,
+                            'status_color': status_color
+                        })
             
             if part_valid and part_name in eao_data and part_name in xml_data:
                 validation_results['valid_parts'] += 1

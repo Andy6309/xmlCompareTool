@@ -257,16 +257,21 @@ def display_detailed_results(validation_results: dict):
             })
             
             # Add color coding
-            def color_status(val):
-                if val == 'Match':
-                    return 'background-color: #e6ffed; color: #22543d'
-                elif val == 'Missing in EAO' or val == 'Missing in XML':
-                    return 'background-color: #fff5f5; color: #742a2a'
-                else:
-                    return 'background-color: #fffbf0; color: #744210'
+            def get_status_color(status: str) -> str:
+                """Get color based on validation status"""
+                color_map = {
+                    'Match': '#d4edda',      # Light green
+                    'Different': '#fff3cd',   # Light yellow
+                    'Missing in EAO': '#f8d7da',  # Light red
+                    'Missing in XML': '#f8d7da',  # Light red
+                    'Missing SAP Property': '#f8d7da',  # Light red
+                    'No SAP Properties': '#f8d7da',  # Light red
+                    'Part Produced': '#fff3cd'  # Light yellow - part made but missing SAP data
+                }
+                return color_map.get(status, 'white')
             
             # Apply styling
-            styled_df = part_df.style.applymap(color_status, subset=['Status'])
+            styled_df = part_df.style.applymap(lambda x: f"background-color: {get_status_color(x)}", subset=['Status'])
             
             st.dataframe(styled_df, use_container_width=True, hide_index=True)
             
